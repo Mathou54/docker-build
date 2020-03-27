@@ -3,4 +3,5 @@ version: '3.7'
 services:
   aircrack-ng:
     build: aircrack-ng/.
-    container_name: aircrack-ng
+    container_name: mathou54/aircrack-ng
+    image: mathou54/aircrack-ng
