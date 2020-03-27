@@ -10,16 +10,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Build the Docker images
         run: docker-compose build
 
-
-  push:
-    if: github.ref == 'refs/heads/master'
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Push the Docker images
+        if: github.ref == 'refs/heads/master'
         run: docker-compose push
