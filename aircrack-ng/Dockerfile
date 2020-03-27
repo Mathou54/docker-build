@@ -1,9 +1,9 @@
 
 FROM alpine:3.10
 
-RUN apt-get update && \
-    apt-get install -y aircrack-ng && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk update && \
+    apk add aircrack-ng && \
+    rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["aircrack-ng"]
 
