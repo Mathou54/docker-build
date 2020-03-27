@@ -16,6 +16,7 @@ jobs:
 
   push:
     if: github.ref == 'refs/heads/master'
+    needs: build
 
     runs-on: ubuntu-latest
 
