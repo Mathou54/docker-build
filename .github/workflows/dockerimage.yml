@@ -14,6 +14,10 @@ jobs:
       - name: Build the Docker images
         run: docker-compose build
 
-      - name: Push the Docker images
+      - name: Login the Docker images on master
+        if: github.ref == 'refs/heads/master'
+        run: docker login -u mathou54 -p ${{ secrets.DockerToken }}
+
+      - name: Push the Docker images on master
         if: github.ref == 'refs/heads/master'
         run: docker-compose push
