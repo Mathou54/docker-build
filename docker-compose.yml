@@ -1,0 +1,6 @@
+version: '3.7'
+
+services:
+  aircrack-ng:
+    build: aircrack-ng/.
+    container_name: aircrack-ng
